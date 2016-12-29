@@ -1,0 +1,23 @@
+<div class="container">
+
+  <!-- navbar component -->
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <!-- Sign in/out form and user signed in details -->
+
+
+  <!-- show games data -->
+  <div class="panel panel-default">
+    <div class="panel-heading">Games</div>
+    <div class="panel-body">
+      <ul ng-repeat="game in games" ng-if="user.signedIn">
+        <li>{{ game.scoreHome }} - {{  game.scoreAway }}</li>
+      </ul>
+
+      <p ng-if="!user.signedIn">You must be signed in to request posts</p>
+    </div>
+  </div>
+
+</div>
