@@ -12,20 +12,60 @@
     }]);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
-        controllerAs: 'main'
+        controllerAs: 'main',
+        resolve: {
+          auth: function ($auth, $state) {
+            return $auth.validateUser()
+              .then(function(result){
+                  if (result) {
+                    $state.go('games');
+                  }
+                  console.log(result);
+                  console.log("validateUser");
+              })
+              .catch (function (err) {
+                  console.log(err);
+              })
+          }
+        }
+      })
+      .state('new_game', {
+        url: '/new',
+        templateUrl: 'app/new_game/new_game.html',
+        controller: 'NewGameController',
+        css: 'app/new_game/new_game.css',
+        controllerAs: 'newGame',
+        resolve: {
+          auth: function ($auth, $state) {
+            return $auth.validateUser().catch(function(err){
+              console.info('not authenticated', err);
+              $state.go('home');
+            })
+          }
+        }
       })
       .state('games', {
         url: '/games',
         templateUrl: 'app/games/games.html',
         controller: 'GamesController',
-        controllerAs: 'games'
+        controllerAs: 'games',
+        resolve: {
+          auth: function ($auth, $state) {
+            return $auth.validateUser().catch(function(err){
+              console.info('not authenticated', err);
+              $state.go('home');
+            })
+          }
+        }
       });
+
+    $locationProvider.html5Mode(true);
 
     $urlRouterProvider.otherwise('/');
   }

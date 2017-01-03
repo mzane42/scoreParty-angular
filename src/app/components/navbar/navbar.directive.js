@@ -20,8 +20,21 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController(moment) {
+    function NavbarController(moment, $scope, $auth, $location) {
       var vm = this;
+
+      $scope.handleSignOutBtnClick = function() {
+        $auth.signOut()
+          .then(function(resp) {
+            console.log('logout');
+            console.log(resp)
+            $location.path('/')
+            // handle success response
+          })
+          .catch(function(resp) {
+            // handle error response
+          });
+      };
 
     }
   }

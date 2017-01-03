@@ -1,0 +1,107 @@
+.new-game-container {
+  background: white;
+  border-radius: 12px;
+}
+
+.new-game-title {
+  margin: 0 auto;
+  color: #1c2228;
+  font-size: 22px;
+  text-align: center;
+  font-style: italic;
+  background: none;
+  position: relative;
+  font-weight: normal;
+  padding: 20px;
+}
+
+
+.new-game-subtitle {
+  font-size: 22px;
+  background: none;
+  position: relative;
+  color: #337ab7;
+  font-weight: normal;
+}
+
+.home-name {
+  text-align: right;
+  font-size: 20px;
+  color: #666;
+}
+
+#away-name {
+ font-size: 20px;
+  color: #666;
+}
+
+.home-wrapper {
+  padding: 15px;
+  border: 3px solid #0154a3;
+  width: 43%;
+  min-height: 80px;
+  border-radius: 5px;
+}
+
+.away-wrapper {
+  padding: 17px;
+  border: 3px solid #cc2b32;
+  width: 43%;
+  min-height: 80px;
+  border-radius: 5px;
+}
+
+.versus-img {
+  height: 80px;
+  float:left;
+}
+
+
+.basic-informations-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 23px;
+  background: #f5f4f4;
+  padding: 10px;
+}
+
+.proof-file {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  height: 150px;
+  width: 210px;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.proof-file > p {
+  margin: 0 0 10px;
+  color: #666;
+  font-weight: bold;
+}
+
+.proof-file > img {
+  margin-bottom: 20px;
+}
+
+#home-score, #away-score {
+  font-size: 20px;
+}
+
+
+.home-title {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  color: #0154a3;
+  font-weight: bold;
+}
+
+.away-title {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  color: #cc2b32;
+  font-weight: bold;
+}

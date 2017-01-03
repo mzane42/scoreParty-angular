@@ -1,0 +1,42 @@
+<link href="app/new_game/new_game.css" rel="stylesheet" />
+<div>
+  <acme-navbar></acme-navbar>
+</div>
+<div class="new-game-container container">
+  <h1 class="new-game-title "> Creer une nouvelle partie </h1>
+  <form name="newGame" method="post">
+    <h2 class="new-game-subtitle"> informations sur la partie </h2>
+    <div class="basic-informations-container row">
+      <div class="col-md-6 home-wrapper">
+        <div class="col-md-8 home-player">
+          <p class="home-name"> {{home_name}} </p>
+        </div>
+        <div class="col-md-4 home-score">
+          <input placeholder="0" type="number" min="0" id="home-score" class="form-control" ng-model="game.score_home" required />
+        </div>
+        <span class="home-title">Home</span>
+      </div>
+      <img class="versus-img" src="../../assets/images/versus.png" />
+      <div class="col-md-6 away-wrapper">
+        <div class="col-md-4 away-score">
+          <input placeholder="0" type="number" min="0" id="away-score" class="form-control" ng-model="game.score_away" required />
+        </div>
+        <div class="col-md-8 away-player">
+          <input type="text" id="away-name" class="form-control" placeholder="adversaire" ng-model="game.opposing_player" required>
+        </div>
+        <span class="away-title">Away</span>
+      </div>
+    </div>
+    <h2 class="new-game-subtitle"> uploader une photo pour prouver votre score... </h2>
+    <div class="more-informations-container">
+      <div class="form-group">
+        <label>
+          Preuve :
+        </label>
+      <input type="file" ng-file-model="proof_file" name="proof_file"  accept="image/*" placeholder="Glissez une photo">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" ng-click="newGame.$valid && new_game()">Valider</button>
+    </div>
+  </form>
+</div>

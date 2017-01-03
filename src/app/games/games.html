@@ -2,7 +2,7 @@
 
   <!-- navbar component -->
   <div>
-    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    <acme-navbar></acme-navbar>
   </div>
 
   <!-- Sign in/out form and user signed in details -->
@@ -13,7 +13,8 @@
     <div class="panel-heading">Games</div>
     <div class="panel-body">
       <ul ng-repeat="game in games" ng-if="user.signedIn">
-        <li>{{ game.scoreHome }} - {{  game.scoreAway }}</li>
+        <li>{{ game.score_home }} - {{  game.score_away }}</li>
+        <img ng-show="game.proof_url != null" ng-src="{{game.proof_url}}" />
       </ul>
 
       <p ng-if="!user.signedIn">You must be signed in to request posts</p>
