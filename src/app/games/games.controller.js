@@ -4,13 +4,14 @@
   angular
     .module('angularRails')
     .controller('GamesController', function($scope, GameService, SweetAlert) {
+      $scope.games = {}
       $scope.isCollapsed = true;
       $scope.descriptionIsCollapsed = true;
       $scope.typeGameSelected = {}
       $scope.triSelect = {}
       $scope.triSelect = [
-        {id: 1, name: 'Du plus recent', value: '-created_at', group: 'created_at | date:"MM/dd/yyyy"'},
-        {id: 2, name: 'Du plus ancien',  value: 'created_at',  group: 'created_at | date:"MM/dd/yyyy"'},
+        {id: 1, name: 'Du plus recent', value: '-created_at', group: 'created_at | date:"dd/MM/yyyy"'},
+        {id: 2, name: 'Du plus ancien',  value: 'created_at',  group: 'created_at | date:"dd/MM/yyyy"'},
         {id: 3, name: 'De la plus grosse victoire',  value: '-diff_score'},
         {id: 4, name: 'De la plus grosse defaite',  value: 'diff_score'}
       ];

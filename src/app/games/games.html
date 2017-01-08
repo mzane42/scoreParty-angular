@@ -6,12 +6,7 @@
   <!-- container !-->
  <div class="container last-games-container">
    <h1 class="last-game-title"> Mes dernieres parties</h1>
-   <div class="row" ng-show="games == null">
-     <p>
-        hey
-     </p>
-   </div>
-   <div class="row" ng-show="games != null">
+   <div class="row">
      <div class="search-container">
        <div class="filter col-xs-12">
          <p class="filter-title"> Filtre par : </p>
@@ -44,7 +39,6 @@
        </div>
      </div>
    </div>
-
    <div class="group-container" ng-repeat="g in games | toArray:true | orderBy: triSelect.selected.value.value | groupBy: (triSelect.selected.value.group == null) ? null : triSelect.selected.value.group | toArray:true  " ng-if="user.signedIn">
      <p class="group-date" ng-show="triSelect.selected.value.group != null">{{ g.$key }}</p>
      <div ng-repeat="game in  g | filter:query|typeGameSelect:typeGameSelected.selected.value.name" ng-if="user.signedIn" class="billboard-container row" data-background="{{game.game_type.url_img}}">
@@ -56,7 +50,8 @@
      </div>
      <div class="col-xs-6 home-wrapper">
        <div class=" col-xs-6 home-player">
-         <p class="billboard-home-name"> {{game.user.name.split(' ')[0]}} </p>
+         <img class="billboard-home-image" ng-src="{{game.user.image}}">
+         <p class="billboard-home-name col-xs-6"> {{game.user.name.split(' ')[0]}} </p>
        </div>
        <div class="col-xs-4 billboard-home-score">
          <span> {{game.score_home}} </span>

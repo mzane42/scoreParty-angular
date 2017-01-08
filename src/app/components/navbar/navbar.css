@@ -2,6 +2,12 @@
   color: white;
 }
 
+.panel-default > .panel-heading {
+  background: #0154a3;
+  color: white;
+  font-size: 20px;
+}
+
 .nav-score-party {
   background: #0154a3;
   border : 0;
@@ -32,4 +38,10 @@
 .navbar-container {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.image-profil {
+  float: right;
+  border-radius: 50%;
+  height: 48px;
 }

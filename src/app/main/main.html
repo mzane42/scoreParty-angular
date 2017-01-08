@@ -1,23 +1,18 @@
 <div class="container">
 
-  <div class="jumbotron text-center">
+  <div class="jumbotron jumbotron-container text-center">
     <div class="panel panel-default panel-login">
-      <div class="panel-heading">ScoreParty</div>
+      <div class="panel-heading">Score Party</div>
       <div class="panel-body">
-
-        <label>user signed in?</label>
-        <p>{{ user.signedIn ? "true" : "false" }}</p>
-        <p ng-if="user.signedIn"> bonjour <strong>{{ user.name}} </strong></p>
-
-        <!-- sign in form -->
-
+        <img class="image-logo" src="../../../assets/images/logo.png" />
+        <h1 class="main-title"> Créer un compte sur ScoreParty </h1>
+        <p class="main-description">ne vous inquiétez pas, en créant un compte sur ScoreParty, aucune information ne sera postée sur votre mur Facebook sans votre accord</p>
+        <span class="main-authorization">Le projet est actuelement en developement, seul Antoine, Sebastien et Anis ont accès à l'application</span>
         <button class="btn btn-primary"  ng-click="handleFbBtnClick()" ng-if="!user.signedIn">
           Se connecter avec Facebook
         </button>
-        <span>recommanded</span>
-        <!-- sign out button -->
-        <!---->
 
       </div>
     </div>
   </div>
+</div>

@@ -6,6 +6,85 @@
   <!-- container !-->
  <div class="container friends-games-container">
    <h1 class="friends-games-title"> Partie de mes amis Facebook</h1>
+   <div class="row">
+     <div class="search-container">
+       <div class="filter col-xs-12">
+         <p class="filter-title"> Filtre par : </p>
+         <div class="filter-player col-md-6 col-sm-6 col-xs-12">
+           <span class="filter-name"><img class="filter-img" src="../../assets/images/joystick.png"/>Jeux</span>
+           <ui-select  ng-model="typeGameSelected.selected.value">
+             <ui-select-match>
+               <span ng-bind="$select.selected.name"></span>
+             </ui-select-match>
+             <ui-select-choices repeat="g in (games_type | filter: $select.search) track by g.id">
+               <span ng-bind="g.name"></span>
+             </ui-select-choices>
+           </ui-select>
+         </div>
+         <div class="filter-game col-md-6 col-sm-6 col-xs-12">
+           <span class="filter-name"><img class="filter-img" src="../../assets/images/football-player.png"/>nom du joueur</span>
+           <input type="text" class="form-control" placeholder="Ex : Antoine, Kevin ..." ng-model="query"/>
+         </div>
+       </div>
+       <div class="tri col-xs-12">
+         <p class="filter-title"> Tri par  : </p>
+         <ui-select ng-model="triSelect.selected.value">
+           <ui-select-match>
+             <span ng-bind="$select.selected.name"></span>
+           </ui-select-match>
+           <ui-select-choices repeat="t in (triSelect)">
+             <span ng-bind="t.name"></span>
+           </ui-select-choices>
+         </ui-select>
+       </div>
+     </div>
+   </div>
+   <div class="group-container" ng-repeat="g in games | toArray:true | orderBy: triSelect.selected.value.value | groupBy: (triSelect.selected.value.group == null) ? null : triSelect.selected.value.group | toArray:true  " ng-if="user.signedIn">
+     <p class="group-date" ng-show="triSelect.selected.value.group != null">{{ g.$key }}</p>
+     <div ng-repeat="game in  g | filter:query|typeGameSelect:typeGameSelected.selected.value.name" ng-if="user.signedIn" class="billboard-container row" data-background="{{game.game_type.url_img}}">
+       <div class="billboard-information col-xs-12">
+         <time class="time-ago">{{ game.created_at | timeAgo }}</time>
+         <img ng-src="{{game.verified | verifiedImg}}" /><span class="billboard-proof {{game.verified | verifiedClass }}"> {{game.verified | verified}} <button ng-show="game.verified != null" type="button" class="btn btn-preview" ng-click="isCollapsed = !isCollapsed"> <img src="../../assets/images/image-m.png"/> </button></span>
+         <button ng-show="game.description != null" type="button" class="btn btn-preview" ng-click="descriptionIsCollapsed = !descriptionIsCollapsed"> <img src="../../assets/images/chat.png"/> </button>
+       </div>
+       <div class="col-xs-6 home-wrapper">
+         <div class=" col-xs-6 home-player">
+           <img class="billboard-home-image" ng-src="{{game.user.image}}">
+           <p class="billboard-home-name col-xs-6"> {{game.user.name.split(' ')[0]}} </p>
+         </div>
+         <div class="col-xs-4 billboard-home-score">
+           <span> {{game.score_home}} </span>
+         </div>
+         <span class="home-title">Home</span>
+       </div>
+       <img class="versus-img" src="../../assets/images/versus.png" />
+       <div class="col-xs-6 away-wrapper">
+         <div class="col-xs-4 billboard-away-score">
+           <span> {{game.score_away}} </span>
+         </div>
+         <div class=" col-xs-8 away-player">
+           <p class="billboard-away-name"> {{game.opposing_player}} </p>
+         </div>
+         <span class="away-title">Away</span>
+       </div>
+       <div ng-show="game.description != null" class="col-xs-12 proof-img-wrapper">
+         <div uib-collapse="descriptionIsCollapsed">
+           <div class="well well-lg">
+             <p class="collapse-info">Commentaire :</p>
+             <p class="collapse-description">{{game.description}}</p>
+           </div>
+         </div>
+       </div>
+       <div ng-show="game.proof_url != null" class="col-xs-12 proof-img-wrapper">
+         <div uib-collapse="isCollapsed">
+           <div class="well well-lg">
+             <p class="collapse-info">Image :</p>
+             <img class="proof-img" ng-src="{{game.proof_url}}"/>
+           </div>
+         </div>
+       </div>
+     </div>
 
-   <p> Soon ... </p>
+     <p ng-if="!user.signedIn">You must be <a ui-sref="home"> signed </a> in to request friends_games</p>
+   </div>
  </div>

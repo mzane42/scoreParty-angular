@@ -14,3 +14,266 @@
   font-weight: normal;
   padding: 20px;
 }
+
+
+.billboard-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #f5f4f4;
+  padding: 10px 0 10px 10px;
+  position: relative;
+}
+
+
+.filter-name {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.filter-title {
+  font-weight: bold;
+}
+
+.filter-player {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.filter-game {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+
+.filter {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.tri {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+
+.billboard-container:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.06;
+  background-image: url(https://s3.eu-west-2.amazonaws.com/score-party/default_game.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.group-container {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.group-date {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.billboard-home-name {
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-preview {
+  background-color: transparent;
+  padding: 0;
+}
+
+.proof-img {
+  height:auto;
+  max-width: 100%;
+}
+
+.collapse-info {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.billboard-away-name {
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.billboard-home-score {
+  text-align: right
+}
+
+.billboard-home-score > span {
+  font-size: 20px;
+}
+
+.billboard-away-score > span {
+  font-size: 20px;
+}
+
+.time-ago {
+  float:right;
+  color: #666;
+  font-style: italic;
+}
+
+.billboard-information {
+  margin-bottom: 10px;
+}
+
+.billboard-proof {
+  font-weight: bold;
+  font-style: italic;
+}
+.verified {
+  color: #91DC5A
+}
+.not-verified {
+  color: #D80027;
+
+}
+
+.proof-img-wrapper {
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+.new-game-container {
+  background: white;
+  border-radius: 12px;
+}
+
+.new-game-title {
+  margin: 0 auto;
+  color: #1c2228;
+  font-size: 22px;
+  text-align: center;
+  font-style: italic;
+  background: none;
+  position: relative;
+  font-weight: normal;
+  padding: 20px;
+}
+
+.btn-delete {
+  float: right;
+  background: transparent
+}
+
+
+
+.new-game-subtitle {
+  font-size: 22px;
+  background: none;
+  position: relative;
+  color: #337ab7;
+  font-weight: normal;
+}
+
+.home-wrapper {
+  border: 3px solid #0154a3;
+  padding: 6px;
+  background: #0154a3;
+  border-radius: 5px 0 0 5px;
+  color: white;
+  width: 43%;
+}
+
+.away-wrapper {
+  padding: 6px;
+  border: 3px solid #cc2b32;
+  background: #cc2b32;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  width: 43%;
+}
+
+.versus-img {
+  height: 48px;
+  float:left;
+}
+
+
+.basic-informations-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f5f4f4;
+  padding: 10px;
+}
+
+.proof-file {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  height: 150px;
+  width: 210px;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.proof-file > p {
+  margin: 0 0 10px;
+  color: #666;
+  font-weight: bold;
+}
+
+.proof-file > img {
+  margin-bottom: 20px;
+}
+
+#home-score, #away-score {
+  font-size: 20px;
+}
+
+
+.home-title {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.away-title {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  font-weight: bold;
+}
+
+.billboard-home-image {
+  float: left;
+  height: 30px;
+}
+
+@media screen and (max-width: 394px) {
+
+  .versus-img {
+    display:none;
+  }
+  .home-wrapper {
+    width:50%;
+  }
+  .away-wrapper {
+    width: 50%;
+  }
+}
+

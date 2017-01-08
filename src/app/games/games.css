@@ -258,6 +258,11 @@
   font-weight: bold;
 }
 
+.billboard-home-image {
+  float: left;
+  height: 30px;
+}
+
 @media screen and (max-width: 394px) {
 
   .versus-img {

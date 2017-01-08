@@ -23,6 +23,13 @@
     function NavbarController(moment, $scope, $auth, $location) {
       var vm = this;
 
+      $auth.validateUser()
+        .then(function(result){
+          $scope.user = result
+        })
+        .catch (function (err) {
+          console.log(err);
+        })
       $scope.handleSignOutBtnClick = function() {
         $auth.signOut()
           .then(function(resp) {

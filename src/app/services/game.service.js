@@ -13,11 +13,16 @@
     service.createGame = createGame;
     service.deleteById = deleteById;
     service.getGamesType = getGamesType;
+    service.FriendsGameAll = FriendsGameAll
     return service;
 
 
     function GetAll() {
       return $http.get(baseUrl + '/games').then(handleSuccess, handleError);
+    }
+
+    function FriendsGameAll() {
+      return $http.get(baseUrl + '/games_friend').then(handleSuccess, handleError);
     }
 
     function createGame(game) {

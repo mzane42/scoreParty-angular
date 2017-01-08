@@ -14,7 +14,7 @@ body {
 }
 
 .panel-login {
-  max-width: 380px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -25,3 +25,48 @@ body {
   max-width: 75%;
   margin: 0 auto;
 }
+
+.image-logo {
+
+}
+
+.main-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main-authorization {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.main-description {
+  font-size: 16px;
+}
+
+.jumbotron-container {
+  background-image: url(https://s3.eu-west-2.amazonaws.com/score-party/default_game.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron h1, .main-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .jumbotron p, .jumbotron p {
+    font-size: 16px;
+  }
+
+}
+
+

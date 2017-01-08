@@ -12,7 +12,8 @@
     $scope.handleFbBtnClick = function() {
       $auth.authenticate('facebook')
         .then(function(user) {
-          $state.go('games');
+          console.log(user)
+          //$state.go('games');
           // handle success
         })
         .catch(function(error) {
