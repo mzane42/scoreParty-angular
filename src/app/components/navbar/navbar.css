@@ -1,3 +1,35 @@
 .acme-navbar-text {
   color: white;
 }
+
+.nav-score-party {
+  background: #0154a3;
+  border : 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #9d9d9d;
+}
+.btn-logout {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  float: right;
+}
+
+.btn-logout:hover, .btn-logout:active, .btn-logout:focus {
+  background-color: #9d9d9d ;
+}
+
+.logo-img {
+  height: 48px;
+}
+
+.navbar-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}

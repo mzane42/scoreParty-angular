@@ -1,0 +1,16 @@
+.friends-games-container {
+  background: white;
+  border-radius: 12px;
+}
+
+.friends-games-title {
+  margin: 0 auto;
+  color: #1c2228;
+  font-size: 22px;
+  text-align: center;
+  font-style: italic;
+  background: none;
+  position: relative;
+  font-weight: normal;
+  padding: 20px;
+}

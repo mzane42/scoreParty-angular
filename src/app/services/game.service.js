@@ -11,6 +11,8 @@
 
     service.GetAll = GetAll;
     service.createGame = createGame;
+    service.deleteById = deleteById;
+    service.getGamesType = getGamesType;
     return service;
 
 
@@ -22,13 +24,20 @@
       return $http.post(baseUrl + '/games', {game: game }).then(handleSuccess, handleError);
     }
     // private functions
-
-    function handleSuccess(res) {
-      return res.data;
+    function deleteById(game_id) {
+      return $http.delete(baseUrl + '/games/'+ game_id).then(handleSuccess, handleError);
     }
 
-    function handleError(res) {
-      return $q.reject(res);
+    function getGamesType() {
+      return $http.get(baseUrl + '/game_types').then(handleSuccess, handleError)
+    }
+
+    function handleSuccess(res) {
+      return $q.resolve(res.data);
+    }
+
+    function handleError(err) {
+      return $q.reject(err);
     }
   }
 })();

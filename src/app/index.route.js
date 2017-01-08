@@ -63,7 +63,21 @@
             })
           }
         }
-      });
+      })
+    .state('friends_games', {
+      url: '/friends_games',
+      templateUrl: 'app/friends_games/friends_games.html',
+      controller: 'FriendsGamesController',
+      controllerAs: 'friendsGames',
+      resolve: {
+        auth: function ($auth, $state) {
+          return $auth.validateUser().catch(function(err){
+            console.info('not authenticated', err);
+            $state.go('home');
+          })
+        }
+      }
+    })
 
     $locationProvider.html5Mode(true);
 

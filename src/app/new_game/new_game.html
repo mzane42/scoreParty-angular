@@ -1,42 +1,65 @@
 <link href="app/new_game/new_game.css" rel="stylesheet" />
 <div>
+
   <acme-navbar></acme-navbar>
 </div>
 <div class="new-game-container container">
-  <h1 class="new-game-title "> Creer une nouvelle partie </h1>
+  <h1 class="new-game-title "> Nouvelle partie </h1>
   <form name="newGame" method="post">
-    <h2 class="new-game-subtitle"> informations sur la partie </h2>
-    <div class="basic-informations-container row">
-      <div class="col-md-6 home-wrapper">
-        <div class="col-md-8 home-player">
+    <h2 class="new-game-subtitle"> Information sur la partie </h2>
+    <div class="basic-information-container row">
+      <div class="type-game-container col-md-6 col-xs-12">
+        <label > Choisir le jeu </label>
+        <ui-select  ng-model="typeGameSelect.selected.value">
+          <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+          </ui-select-match>
+          <ui-select-choices repeat="g in (games_type | filter: $select.search) track by g.id">
+            <span ng-bind="g.name"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="description-container col-md-6 col-xs-12">
+          <label for="description"> commentaire : </label>
+          <textarea rows="5" placeholder="Ex : La manette ne marche pas, 5 eme victoire d'affilés etc..." id="description" ng-model="game.description" class="form-control"></textarea>
+        </div>
+    </div>
+    <h2 class="new-game-subtitle"> Score de la partie </h2>
+    <div class="score-informations-container row">
+      <div class="col-xs-6 home-wrapper">
+        <div class="col-xs-8 home-player">
           <p class="home-name"> {{home_name}} </p>
         </div>
-        <div class="col-md-4 home-score">
+        <div class="col-xs-4 home-score">
           <input placeholder="0" type="number" min="0" id="home-score" class="form-control" ng-model="game.score_home" required />
         </div>
         <span class="home-title">Home</span>
       </div>
-      <img class="versus-img" src="../../assets/images/versus.png" />
-      <div class="col-md-6 away-wrapper">
-        <div class="col-md-4 away-score">
+      <div class="col-xs-6 away-wrapper">
+        <div class="col-xs-4 away-score">
           <input placeholder="0" type="number" min="0" id="away-score" class="form-control" ng-model="game.score_away" required />
         </div>
-        <div class="col-md-8 away-player">
+        <div class="col-xs-8 away-player">
           <input type="text" id="away-name" class="form-control" placeholder="adversaire" ng-model="game.opposing_player" required>
         </div>
         <span class="away-title">Away</span>
       </div>
     </div>
-    <h2 class="new-game-subtitle"> uploader une photo pour prouver votre score... </h2>
+    <h2 class="new-game-subtitle"> Uploader une photo pour prouver votre score... </h2>
     <div class="more-informations-container">
       <div class="form-group">
         <label>
           Preuve :
         </label>
-      <input type="file" ng-file-model="proof_file" name="proof_file"  accept="image/*" placeholder="Glissez une photo">
+        <label class="btn btn-default btn-file">
+          Parcourir vos photos<input type="file" onchange="angular.element(this).scope().fileNameChanged(this)" ng-file-model="proof_file" name="proof_file"  accept="image/*" placeholder="Glissez une photo" style="display: none;">
+        </label>
+        <span ng-show="file_name"> {{file_name }}</span>
+      </div>
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit" ng-click="newGame.$valid && new_game()">Valider</button>
+      <button type="submit" disable-on-promise="new_game()" class="btn btn-primary"> Valider
+      </button>
     </div>
   </form>
 </div>
