@@ -30,7 +30,7 @@ The service is listening on :
 http://localhost:3000
 ~~~
 
-(Note : Facebook don't allow authentification on developement mode without admin authorization, so if you want to use this app, your Facebook account must be added as tester) 
+(Note : Facebook don't allow authentification on developement mode without admin authorization, so if you want to test this app, ask me to add you as tester ;) ) 
 
 ## Server side :
 
