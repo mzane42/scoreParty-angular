@@ -1,6 +1,6 @@
 # ScoreParty Client
 
-Angular project to save video game scores and share it with your facebook friends connected with the server [scoreParty-api](https://github.com/mzane42/scoreParty)
+Simple Angular project to save video game scores and share it with your facebook friends. This app is connected with the server [scoreParty-api](https://github.com/mzane42/scoreParty)
 
 ## Getting Started
 
