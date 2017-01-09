@@ -14,6 +14,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 Simply run npm and bower to have all packages needed _(it may take some time)_
+~~~bash
+npm install && bower install
+~~~
 
 ## Running the server :
 
