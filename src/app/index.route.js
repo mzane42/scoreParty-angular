@@ -12,8 +12,7 @@
     }]);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+  function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
         url: '/',

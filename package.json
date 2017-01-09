@@ -1,7 +1,9 @@
 {
   "name": "angularRails",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-environment": "^1.0.4"
+  },
   "scripts": {
     "test": "gulp test"
   },
