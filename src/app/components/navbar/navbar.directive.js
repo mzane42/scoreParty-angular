@@ -33,8 +33,6 @@
       $scope.handleSignOutBtnClick = function() {
         $auth.signOut()
           .then(function(resp) {
-            console.log('logout');
-            console.log(resp)
             $location.path('/')
             // handle success response
           })

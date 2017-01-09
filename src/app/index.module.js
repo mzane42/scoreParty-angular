@@ -2,6 +2,23 @@
   'use strict';
 
   angular
-    .module('angularRails', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'toastr','rails', 'ng-token-auth', 'ng-file-model', 'oitozero.ngSweetAlert', 'ui.select', 'angular-toArrayFilter', 'angular.filter']);
+    .module('angularRails',
+            ['ngAnimate',
+              'ngCookies',
+              'ngTouch',
+              'ngSanitize',
+              'ngMessages',
+              'ngAria',
+              'ngResource',
+              'ui.router',
+              'ui.bootstrap',
+              'toastr',
+              'rails',
+              'ng-token-auth',
+              'ng-file-model',
+              'oitozero.ngSweetAlert',
+              'ui.select',
+              'angular-toArrayFilter',
+              'angular.filter']);
 
 })();

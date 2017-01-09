@@ -26,8 +26,6 @@
                   if (result) {
                     $state.go('games');
                   }
-                  console.log(result);
-                  console.log("validateUser");
               })
               .catch (function (err) {
                   console.log(err);

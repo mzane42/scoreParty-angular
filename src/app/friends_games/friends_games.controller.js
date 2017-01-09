@@ -20,7 +20,6 @@
         .then(function (games_type) {
           $scope.games_type = games_type
           $scope.games_type.unshift({id: 0, name: 'Tout'})
-          console.log($scope.games_type[5])
           $scope.typeGameSelected.selected = {value: $scope.games_type[0]}
         })
         .catch(function (err) {
@@ -31,7 +30,6 @@
         GameService.FriendsGameAll()
           .then(function(games){
             $scope.games = games;
-            console.log($scope.games)
           })
           .catch(function (err) {
             console.log(err)
